@@ -1,0 +1,115 @@
+<!-- aula4/index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <!-- Define o conjunto de caracteres para suportar acentos -->
+    <meta charset="UTF-8">
+
+    <!-- Faz o layout respeitar a largura real do dispositivo e controlar o zoom inicial -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Título que aparece na aba do navegador -->
+    <title>Portfólio - Aula 4</title>
+
+    <!-- Importa o CSS desta página -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Cabeçalho da página -->
+    <header class="topo">
+        <!-- Título principal -->
+        <h1 class="titulo">Meu Portfólio</h1>
+
+        <!-- Botão que será usado no mobile para abrir/fechar o menu -->
+        <!-- No desktop ele some via CSS -->
+        <button class="botao-menu" id="botao-menu">Menu</button>
+
+        <!-- Menu de navegação -->
+        <!-- No mobile começa oculto e aparece quando o botão é clicado -->
+        <nav class="menu" id="menu">
+            <!-- Links apontam para seções pelo id -->
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Conteúdo principal -->
+    <main class="conteudo">
+
+        <!-- Seção "Sobre" -->
+        <section class="secao" id="sobre">
+            <h2>Sobre mim</h2>
+
+            <!-- Texto que o aluno deve editar -->
+            <p>Texto curto sobre você.</p>
+
+            <!-- Imagem de exemplo (picsum) -->
+            <!-- Pode ser substituída por uma imagem local depois -->
+            <img class="imagem" src="https://picsum.photos/600/300" alt="Imagem exemplo">
+        </section>
+
+        <!-- Seção "Projetos" -->
+        <section class="secao" id="projetos">
+            <h2>Projetos</h2>
+
+            <!-- Container dos projetos -->
+            <!-- O CSS usa Grid aqui e o JS pode aplicar fallback (Flex) se precisar -->
+            <div class="lista-projetos" id="lista-projetos">
+
+                <!-- Card de projeto -->
+                <div class="projeto">
+                    <h3>Projeto 1</h3>
+                    <p>Descrição do projeto 1.</p>
+                </div>
+
+                <!-- Card de projeto -->
+                <div class="projeto">
+                    <h3>Projeto 2</h3>
+                    <p>Descrição do projeto 2.</p>
+                </div>
+
+                <!-- Card de projeto -->
+                <div class="projeto">
+                    <h3>Projeto 3</h3>
+                    <p>Descrição do projeto 3.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Seção "Contato" -->
+        <section class="secao" id="contato">
+            <h2>Contato</h2>
+
+            <!-- Formulário simples (não envia para servidor, é só estrutura) -->
+            <form class="formulario">
+                <!-- Campo Nome -->
+                <label for="nome">Nome</label>
+                <input id="nome" type="text" required>
+
+                <!-- Campo Email -->
+                <label for="email">E-mail</label>
+                <input id="email" type="email" required>
+
+                <!-- Campo Mensagem -->
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" required></textarea>
+
+                <!-- Botão de envio (só demonstração) -->
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="rodape">
+        <p>Portfólio - Aula 4</p>
+    </footer>
+
+    <!-- Importa o JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>

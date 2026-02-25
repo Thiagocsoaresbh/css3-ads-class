@@ -1,0 +1,127 @@
+/* Remove a margem padrão do navegador e define a fonte da página */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estiliza o cabeçalho da página */
+.topo {
+    background-color: #333; /* cor de fundo escura */
+    color: white; /* cor do texto */
+    padding: 16px; /* espaçamento interno */
+}
+
+/* Remove margem padrão do título */
+.titulo {
+    margin: 0;
+}
+
+/* Estiliza o botão que abre o menu no celular */
+.botao-menu {
+    margin-top: 12px; /* espaço acima do botão */
+    padding: 8px 10px; /* tamanho interno do botão */
+}
+
+/* Menu começa oculto (comportamento importante para mobile) */
+.menu {
+    display: none;
+    margin-top: 12px;
+}
+
+/* Estilização dos links do menu */
+.menu a {
+    display: block; /* cada link ocupa uma linha (mobile) */
+    color: white;
+    text-decoration: none; /* remove sublinhado */
+    padding: 8px 0;
+}
+
+/* Espaçamento geral do conteúdo principal */
+.conteudo {
+    padding: 16px;
+}
+
+/* Estilização das seções da página */
+.secao {
+    margin-bottom: 24px; /* espaço entre seções */
+    background-color: #f2f2f2;
+    padding: 16px;
+}
+
+/* Torna a imagem responsiva */
+.imagem {
+    max-width: 100%; /* nunca ultrapassa o tamanho do container */
+    height: auto; /* mantém proporção */
+    display: block;
+    margin-top: 12px;
+}
+
+/* Container dos projetos usando Flexbox em coluna (mobile-first) */
+.lista-projetos {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* espaço entre projetos */
+}
+
+/* Caixa individual de projeto */
+.projeto {
+    background-color: white;
+    padding: 12px;
+}
+
+/* Formulário organizado em coluna */
+.formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Espaçamento interno dos campos */
+.formulario input,
+.formulario textarea {
+    padding: 8px;
+}
+
+/* Define altura mínima da área de texto */
+.formulario textarea {
+    min-height: 100px;
+}
+
+/* Estilização do rodapé */
+.rodape {
+    text-align: center;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+}
+
+/* Media query para telas maiores (desktop/tablet) */
+@media (min-width: 768px) {
+
+    /* Esconde o botão do menu porque o menu ficará visível */
+    .botao-menu {
+        display: none;
+    }
+
+    /* Torna o menu sempre visível em telas maiores */
+    .menu {
+        display: block;
+    }
+
+    /* Links do menu passam a ficar lado a lado */
+    .menu a {
+        display: inline-block;
+        margin-right: 12px;
+        padding: 0;
+    }
+
+    /* Projetos passam de coluna para linha */
+    .lista-projetos {
+        flex-direction: row;
+    }
+
+    /* Cada projeto ocupa o mesmo espaço */
+    .projeto {
+        flex: 1;
+    }
+}

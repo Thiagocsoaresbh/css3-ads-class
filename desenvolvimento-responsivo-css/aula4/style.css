@@ -1,0 +1,145 @@
+/* aula4/style.css */
+
+/* Define fonte padrão e remove margens padrão do navegador */
+body {
+    margin: 0; /* remove margem padrão */
+    font-family: Arial, sans-serif; /* define uma fonte simples */
+}
+
+/* Cabeçalho com fundo escuro */
+.topo {
+    background-color: #333; /* cor de fundo */
+    color: white; /* cor do texto */
+    padding: 16px; /* espaçamento interno */
+}
+
+/* Remove margem padrão do h1 para não "empurrar" o layout */
+.titulo {
+    margin: 0;
+}
+
+/* Botão do menu (usado principalmente no mobile) */
+.botao-menu {
+    margin-top: 12px; /* espaço entre o título e o botão */
+    padding: 8px 10px; /* tamanho interno do botão */
+}
+
+/* Menu começa oculto no mobile (vai aparecer com JavaScript) */
+.menu {
+    display: none; /* começa escondido */
+    margin-top: 12px; /* separa do botão */
+}
+
+/* Links do menu em formato de lista vertical no mobile */
+.menu a {
+    display: block; /* cada link ocupa uma linha */
+    color: white; /* texto branco */
+    text-decoration: none; /* remove sublinhado */
+    padding: 8px 0; /* aumenta área clicável */
+}
+
+/* Área principal do conteúdo */
+.conteudo {
+    padding: 16px; /* espaço interno geral */
+}
+
+/* Blocos de seção com fundo claro */
+.secao {
+    margin-bottom: 24px; /* separa as seções */
+    background-color: #f2f2f2; /* fundo */
+    padding: 16px; /* espaço interno */
+}
+
+/* Imagem responsiva: nunca ultrapassa o container */
+.imagem {
+    max-width: 100%; /* limita pela largura do container */
+    height: auto; /* mantém proporção */
+    display: block; /* remove espaçamentos estranhos de imagem inline */
+    margin-top: 12px; /* espaço acima */
+}
+
+/* AULA 4: Lista de projetos usando CSS Grid (layout principal) */
+/* Mobile-first: 1 coluna */
+.lista-projetos {
+    display: grid; /* ativa o Grid */
+    grid-template-columns: 1fr; /* 1 coluna no mobile */
+    gap: 12px; /* espaço entre os cards */
+}
+
+/* Card do projeto */
+.projeto {
+    background-color: white; /* destaca o card */
+    padding: 12px; /* espaço interno */
+}
+
+/* Formulário em coluna */
+.formulario {
+    display: flex; /* usa flex para organizar campos */
+    flex-direction: column; /* empilha campos */
+    gap: 10px; /* espaço entre campos */
+}
+
+/* Estilo básico para inputs e textarea */
+.formulario input,
+.formulario textarea {
+    padding: 8px; /* conforto para digitação */
+}
+
+/* Altura mínima para a área de mensagem */
+.formulario textarea {
+    min-height: 100px;
+}
+
+/* Rodapé com o mesmo padrão do cabeçalho */
+.rodape {
+    text-align: center; /* centraliza texto */
+    padding: 12px; /* espaço interno */
+    background-color: #333; /* fundo escuro */
+    color: white; /* texto branco */
+}
+
+/* Media query: a partir de 768px ajusta para desktop/tablet */
+@media (min-width: 768px) {
+
+    /* No desktop, o botão do menu some */
+    .botao-menu {
+        display: none;
+    }
+
+    /* No desktop, o menu fica sempre visível */
+    .menu {
+        display: block;
+    }
+
+    /* Links do menu ficam lado a lado */
+    .menu a {
+        display: inline-block; /* coloca em linha */
+        margin-right: 12px; /* espaço entre links */
+        padding: 0; /* remove padding vertical do mobile */
+    }
+
+    /* AULA 4: Grid vira 3 colunas no desktop */
+    .lista-projetos {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+/* AULA 4: FALLBACK */
+/* Se o navegador não suportar Grid, o JS adiciona a classe "fallback-flex" */
+/* Essa classe substitui o Grid por Flexbox para manter o layout funcional */
+.lista-projetos.fallback-flex {
+    display: flex; /* troca grid por flex */
+    flex-direction: column; /* no mobile fica em coluna */
+    gap: 12px; /* espaço entre cards */
+}
+
+/* Ajuste do fallback para desktop */
+@media (min-width: 768px) {
+    .lista-projetos.fallback-flex {
+        flex-direction: row; /* no desktop vira linha */
+    }
+
+    .lista-projetos.fallback-flex .projeto {
+        flex: 1; /* cada card ocupa o mesmo espaço */
+    }
+}

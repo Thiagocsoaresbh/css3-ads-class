@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio - Aula 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+    <h1 class="titulo">Meu Portfólio</h1>
+
+    <button class="botao-menu" id="botao-menu">Menu</button>
+
+    <nav class="menu" id="menu">
+        <a href="#sobre">Sobre</a>
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+    </nav>
+</header>
+
+<main class="conteudo">
+
+    <section class="secao" id="sobre">
+        <h2>Sobre mim</h2>
+        <p>Escreva aqui um texto curto sobre você.</p>
+        <img class="imagem" src="https://placehold.co/150x220" alt="Minha foto">
+    </section>
+
+    <section class="secao" id="projetos">
+        <h2>Projetos</h2>
+
+        <div class="lista-projetos">
+            <div class="projeto">
+                <h3>Projeto 1</h3>
+                <p>Descrição do projeto 1.</p>
+            </div>
+
+            <div class="projeto">
+                <h3>Projeto 2</h3>
+                <p>Descrição do projeto 2.</p>
+            </div>
+
+            <div class="projeto">
+                <h3>Projeto 3</h3>
+                <p>Descrição do projeto 3.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="secao" id="contato">
+        <h2>Contato</h2>
+
+        <form class="formulario">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" required>
+
+            <label for="email">E-mail</label>
+            <input id="email" type="email" required>
+
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+</main>
+
+<footer class="rodape">
+    <p>Portfólio - Aula 3</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
